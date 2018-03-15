@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendors/video.js/dist/video-js.min.css">
+    <link rel="stylesheet" href="../vendors/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../vendors/emoji-picker/css/emoji.css">
+    <link rel="stylesheet" href="css/style.bundle.css">
+    <script src="js/angular.min.js"></script>
+    <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700&amp;subset=vietnamese"
+          rel="stylesheet">
+</head>
+<body ng-app="myApp">
+<div id="wrapper" ng-controller="myctrl">
+    <header ng-include="'components/header.html'"></header>
+    <main class="main__detail">
+        <div class="container">
+            <div class="player player__video">
+                <video id="my-video" class="video video-js vjs-big-play-centered vjs-default-button" controls
+                       preload="auto" data-setup="{}">
+                    <source src="https://r2---sn-i3b7kn7s.c.drive.google.com/videoplayback?id=a047b845ba1f7a55&itag=22&source=webdrive&requiressl=yes&mm=30&mn=sn-i3b7kn7s&ms=nxu&mv=m&pl=46&ttl=transient&ei=zvGpWqGiDszWuAWg5qCIAg&susc=dr&driveid=1HzD82CVq0_vxW3M4bFVJcDCUhITrksvn&app=explorer&mime=video/mp4&lmt=1521084283109785&mt=1521086842&ip=2405:4800:3094:cd64:edcf:7519:33cb:4ea6&ipbits=0&expire=1521090526&cp=QVNHU0FfT1VQR1hOOnRDMlFJZS1lVzQz&sparams=ip%2Cipbits%2Cexpire%2Cid%2Citag%2Csource%2Crequiressl%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cttl%2Cei%2Csusc%2Cdriveid%2Capp%2Cmime%2Clmt%2Ccp&signature=903A226D93CF8D3A4C7900211C0090F831FF5130.7805B482EC62C2ED9551B1E5496030374D14FE57&key=ck2" type="video/mp4">
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+            </div>
+            <div class="player-sidebar">
+                <ul class="nav nav-tabs sidebar__nav">
+                    <li class="active pull-left"><a data-toggle="tab" href="#home">Danh sách tập</a></li>
+                    <li class="film__ova"><a data-toggle="tab" href="#ova">OVA</a></li>
+                    <li class="pull-right"><a data-toggle="tab" href="#menu1">Bình luận</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="film__episodes">
+                            <div class="dropdown pull-left">
+                                <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <span class="season__name">Season {{ seasonId + 1 }}</span>
+                                    <span class="film__episode-range">{{ episodesRange }}</span>
+                                </a>
+                                <ul class="dropdown-menu season__dropdown">
+                                    <li class="{{ $index == 0 ? 'active' : '' }}" ng-repeat="season in seasons track by $index">
+                                        <a href="#season{{ $index + 1 }}" data-toggle="tab" class="season__dropdown-link" title="{{ season.name }}" ng-click="sendData($index, season.episodesRange)">
+                                            <span class="pull-left season__long-name">{{ season.longName }}</span> <span class="pull-right">{{ season.episodesRange }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="film__view-episodes pull-right">
+                                <form action="" class="form-inline">
+                                    <div class="form-group">
+                                        <label for="episode">Tập</label>
+                                        <input type="number" value="21" id="episode">
+                                        <button type="submit"><i class="fa fa-play"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="content--resize episodes__content">
+                            <div id="season{{ $index + 1 }}" class="{{ $index == 0 ? 'fade in active' : 'fade' }}" ng-repeat="season in contentSeasons track by $index">
+                                <a href="#" ng-repeat="episode in season">
+                                    <div class="film__episode">
+                                        <div class="episode__img pull-left">
+                                            <img src="{{ episode.image }}" alt="{{ episode.name }}"
+                                                 class="img-responsive">
+                                            <div class="episode__icon">
+                                                <i class="fa fa-play"></i>
+                                            </div>
+                                        </div>
+                                        <div class="episode__preview pull-left">
+                                            <p class="episode__name m-0">{{ episode.name }}</p>
+                                            <p class="episode__view-count m-0">{{ episode.views }} lượt xem</p>
+                                        </div>
+                                        <div class="clearbox"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ova" class="tab-pane fade">
+                        <div class="film__episodes ml-10">
+                            <p class="m-0">Tổng số: 352 video</p>
+                        </div>
+                        <div class="content--resize episodes__content ova__content">
+                            <a href="#">
+                                <div class="film__episode">
+                                    <div class="episode__img pull-left">
+                                        <img src="images/preview_episode.jpg" alt="Episode Preview"
+                                             class="img-responsive">
+                                        <div class="episode__icon">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="episode__preview pull-left">
+                                        <p class="episode__name m-0">Tập 1 - Kết thúc và khởi đầu</p>
+                                        <p class="episode__view-count m-0">338,793 lượt xem</p>
+                                    </div>
+                                    <div class="clearbox"></div>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="film__episode">
+                                    <div class="episode__img pull-left">
+                                        <img src="images/preview_episode.jpg" alt="Episode Preview"
+                                             class="img-responsive">
+                                        <div class="episode__icon">
+                                            <i class="fa fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <div class="episode__preview pull-left">
+                                        <p class="episode__name m-0">Tập 1 - Kết thúc và khởi đầu</p>
+                                        <p class="episode__view-count m-0">338,793 lượt xem</p>
+                                    </div>
+                                    <div class="clearbox"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <form action="" class="comment__form">
+                            <input type="text" class="form-control" id="comment__content" data-emojiable="true">
+                            <label for="comment__content" class="comment__emotion"><i class="fa fa-smile-o"></i></label>
+                        </form>
+                        <div class="content--resize comment__field">
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                    <a href="#" class="comment__reply">
+                                        <i class="fa fa-comment"></i> 2 trả lời
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                    <div class="replies">
+                                        <div class="comment__img pull-left">
+                                            <img src="images/avatar.jpg" alt="">
+                                        </div>
+                                        <div class="comment__content pull-right">
+                                            <p class="user__name m-0">Ikaros</p>
+                                            <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                            <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                                <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                    <div class="replies">
+                                        <div class="comment__img pull-left">
+                                            <img src="images/avatar.jpg" alt="">
+                                        </div>
+                                        <div class="comment__content pull-right">
+                                            <p class="user__name m-0">Ikaros</p>
+                                            <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                            <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                                <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment__img pull-left">
+                                    <img src="images/avatar.jpg" alt="">
+                                </div>
+                                <div class="comment__content pull-right">
+                                    <p class="user__name m-0">Ikaros</p>
+                                    <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                    <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                        <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                    <div class="replies">
+                                        <div class="comment__img pull-left">
+                                            <img src="images/avatar.jpg" alt="">
+                                        </div>
+                                        <div class="comment__content pull-right">
+                                            <p class="user__name m-0">Ikaros</p>
+                                            <p class="content m-0">Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu Bên trong Main thật tốt bụng nhưng bên ngoài thì rất ngầu</p>
+                                            <p class="comment__contact"><a href="#"><i class="fa fa-reply"></i> Trả lời</a>
+                                                <span><i class="fa fa-clock-o"></i>1 giờ trước</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearbox"></div>
+            <div style="clear:both"></div>
+            <div class="film-info player">
+                <h2 class="film-info-title">Naruto Shippuuden Tập 392</h2>
+                <div class="film-info-action">
+                    <div class="film-info-like">
+                        <a href="#">
+                            <i class="fa fa-heart text--color-red"></i>
+                            <span>6,947</span> thích
+                        </a>
+                    </div>
+                    <div class="film-info-follow">
+                        <a href="#">
+                            <i class="fa fa-plus-square text--color-red"></i>
+                            <span>9,981</span> theo dõi
+                        </a>
+                    </div>
+                    <div class="film-info-view-count">
+                        <i class="fa fa-bolt"></i>
+                        <span>55,277,780</span>
+                    </div>
+                </div>
+                <div class="film-info__type film-info-update">
+                    <i class="fa fa-spinner fa-spin"></i> Tập mới nhất: 500
+                </div>
+                <div class="film-info__type film-info-genre">
+                    <i class="fa fa-list"></i>
+                    <a href="#" target="_blank">Hành Động</a>,&nbsp;
+                    <a href="#" target="_blank">Hài hước</a>,&nbsp;
+                    <a href="#" target="_blank">Phiêu lưu</a>
+                </div>
+                <div>
+                    <p class="film-info__type"><i class="fa fa-users"></i>Yotsuba Team, Vuighe Sub</p>
+                    <p class="film-info__description"><b>Naruto Shippuuden</b> là phần hai của <b>Naruto Dattebayo</b>. Sau khi huấn luyện 2 năm rưỡi với Jiraiya, Naruto trở về làng Lá, đoàn tụ với những người bạn cậu đã chia tay, và lập lại Nhóm 7, giờ được gọi là Nhóm Kakashi, với Sai thế chỗ Sasuke.<br>
+                        Phần <b>Naruto Shippuuden</b> thì tất cả những người bạn của Naruto đều đã trưởng thành, là những Jounin , có những người đã rất nổi trội. Không giống như phần đầu khi chỉ đóng vai trò phụ, tổ chức <b>Akatsuki</b> chiếm lấy vai trò đối nghịch chính trong tham vọng thống trị thế giới. Sau này chính Tobi và Obito đã khơi ngòi chiến tranh Ninja lần thứ tư giữa <b>Ngũ Đại Quốc</b> và Akatsuki mà người đứng phía sau giật dây là <b>Uchiha Madara</b> nhằm thực hiện kế hoạch Nguyệt Nhãn của hắn.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer ng-include="'components/footer.html'"></footer>
+</div>
+<script src="../vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+<script>
+    new PerfectScrollbar('.episodes__content', {
+        suppressScrollX: true
+    });
+    new PerfectScrollbar('.ova__content');
+    new PerfectScrollbar('.comment__field');
+    new PerfectScrollbar('.season__dropdown');
+</script>
+<script src="../vendors/jquery/jquery.min.js"></script>
+<script src="../vendors/bootstrap/bootstrap.min.js"></script>
+<script src="../vendors/video.js/dist/video.min.js"></script>
+<script src="../vendors/emoji-picker/js/config.js"></script>
+<script src="../vendors/emoji-picker/js/util.js"></script>
+<script src="../vendors/emoji-picker/js/jquery.emojiarea.js"></script>
+<script src="../vendors/emoji-picker/js/emoji-picker.js"></script>
+<script src="js/main.bundle.js"></script>
+<script src="js/main.js"></script>
+<script>
+    app = angular.module('myApp', ['ngSanitize']);
+    app.controller('myctrl', function ($scope, $http) {
+        $http.get('json/episodes.json')
+            .then(function (response) {
+                //First function handles success
+                $scope.contentSeasons = response.data;
+            }, function (response) {
+                //Second function handles error
+                $scope.content = "Something went wrong";
+            });
+        $http.get('json/seasons-name.json')
+            .then(function (response) {
+                //First function handles success
+                $scope.seasons = response.data;
+            }, function (response) {
+                //Second function handles error
+                $scope.content = "Something went wrong";
+            });
+        $scope.episodesRange = '1 - 32';
+        $scope.seasonId = 0;
+
+        $scope.sendData = function (seasonId, range) {
+            $scope.episodesRange = range;
+            $scope.seasonId = seasonId;
+        }
+    });
+
+    $(function () {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: '../vendors/emoji-picker/img/',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
+    });
+    $(function () {
+        let $refreshButton = $('#refresh');
+        let $results = $('#css_result');
+        function refresh() {
+            let css = $('style.cp-pen-styles').text();
+            $results.html(css);
+        }
+        refresh();
+        $refreshButton.click(refresh);
+        $results.click(function () {
+            $(this).select();
+        });
+        let player = videojs('my-video');
+    });
+</script>
+</body>
+</html>

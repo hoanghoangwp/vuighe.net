@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.bundle.css">
+    <script src="js/angular.min.js"></script>
+    <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=vietnamese" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+<div id="wrapper" ng-controller="myctrl">
+    <header ng-include="'components/header.html'"></header>
+    <main>
+        <div class="container">
+            <div class="main__tags">
+                <a href="category.html" class="tags__element active">Hành động</a>
+                <a href="category.html" class="tags__element">Hài hước</a>
+                <a href="category.html" class="tags__element">Phiêu lưu</a>
+                <a href="category.html" class="tags__element">Viễn tưởng</a>
+                <a href="category.html" class="tags__element">Kinh dị</a>
+                <a href="category.html" class="tags__element">Võ thuật</a>
+                <a href="category.html" class="tags__element">Hành động</a>
+            </div>
+            <div class="main__episodes">
+                <div class="episodes mt-0 articles">
+                    <div class="inner_episodes">
+                        <div class="episode" ng-repeat="anime in animes | limitTo:quantity">
+                            <a href="#">
+                                <img src="{{ anime.image }}" class="img-responsive"
+                                     alt="{{ anime.name }}">
+                                <div class="hover">
+                                    <p class="name">{{ anime.name}}</p>
+                                    <p class="info" ng-bind-html="anime.categories" compile-template></p>
+                                    <p class="stat" ng-bind-html="anime.episodes" compile-template></p>
+                                    <div class="viewer">
+                                        <span class="view view1">{{ anime.views }} lượt xem</span>
+                                        <span class="like">{{ anime.likes}} thích</span>
+                                    </div>
+
+                                    <div class="button-preview">
+                                        <div class="button">
+                                            <span>XEM NGAY</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="episode--watch-more text-center episode__button" ng-if="quantity < 200">
+                        <a href="#" class="btn btn-primary" ng-click="loadMore()">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer ng-include="'components/footer.html'"></footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../vendors/bootstrap/bootstrap.min.js"></script>
+<script src="js/main.bundle.js"></script>
+<script src="js/main.js"></script>
+<script>
+    app = angular.module('myApp', ['ngSanitize']);
+    app.controller('myctrl', function ($scope, $http) {
+        $http.get('json/categories.json')
+            .then(function (response) {
+                //First function handles success
+                $scope.animes = response.data;
+            }, function (response) {
+                //Second function handles error
+                $scope.content = "Something went wrong";
+            });
+        $scope.quantity = 20;
+        $scope.loadMore = function () {
+            $scope.quantity += 20;
+        }
+    });
+</script>
+</body>
+</html>

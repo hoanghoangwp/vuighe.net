@@ -1,0 +1,87 @@
+.player {
+  width: 100%;
+  height: 720px;
+
+  @media (min-width: 1365px) {
+    width: calc(100% - 385px);
+    height: 720px;
+  }
+
+  @media (min-width: 1705.5px) {
+    width: calc(100% - 405px);
+  }
+
+  @media (max-width: 1705.5px) and (min-width: 1365px) {
+    height: 640px;
+  }
+
+  @media (max-width: 1365px) and (min-width: 1279px) {
+    width: calc(100% - 385px);
+    height: 492px;
+  }
+
+  @media (max-width: 1279px) and (min-width: 1024px) {
+    width: calc(100% - 340px);
+    height: 470px;
+  }
+
+  @media (max-width: 1023.5px) {
+    float: none !important;
+    width: 100%;
+  }
+
+  @media (max-width: 1023.5px) and (min-width: 799.5px) {
+    height: 500px;
+  }
+
+  @media (max-width: 799.5px) and (min-width: 767.5px) {
+    height: 432px;
+  }
+
+  @media (max-width: 767.5px) and (min-width: 639.5px) {
+    height: 400px;
+  }
+
+  @media (max-width: 639.5px) and (min-width: 479.5px) {
+    height: 330px;
+  }
+
+  @media (max-width: 479.5px) and (min-width: 375px) {
+    height: 250px;
+  }
+
+  @media (max-width: 375px) and (min-width: 320px) {
+    height: 200px;
+  }
+
+  @media (max-width: 320px) and (min-width: 295px) {
+    height: 162px;
+  }
+
+  @media (max-width: 295px) {
+    height: 162px;
+  }
+
+  &.player__video {
+    float: left;
+    margin: 70px auto 0;
+  }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+
+.vjs-play-progress {
+  &.vjs-slider-bar {
+    background: #d80f16 !important;
+  }
+}
+
+.player-sidebar {
+  background-color: #f7f7f7;
+  margin: 70px 0 10px;
+  float: left;
+}

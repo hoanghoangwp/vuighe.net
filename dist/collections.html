@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.bundle.css">
+    <script src="js/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=vietnamese" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+<div id="wrapper" ng-controller="myctrl">
+    <header ng-include="'components/header.html'"></header>
+    <main>
+        <div class="container">
+            <div class="main__slides">
+                <img src="images/collection.jpg" alt="" class="img-responsive">
+            </div>
+            <div class="mb-15"></div>
+            <div class="main__episodes">
+                <div class="episodes mt-0 collection">
+                    <div class="inner_episodes">
+                        <div class="episode" ng-repeat="collection in collections">
+                            <a href="collection-animes.html">
+                                <img src="{{ collection.image }}" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer ng-include="'components/footer.html'"></footer>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../vendors/bootstrap/bootstrap.min.js"></script>
+<script src="js/main.bundle.js"></script>
+<script src="js/main.js"></script>
+<script>
+    app = angular.module('myApp', []);
+    app.controller('myctrl', function($scope, $http) {
+        $http.get('json/collections.json')
+            .then(function(response) {
+                //First function handles success
+                $scope.collections = response.data;
+            }, function(response) {
+                //Second function handles error
+                $scope.content = "Something went wrong";
+            });
+    });
+</script>
+</body>
+</html>

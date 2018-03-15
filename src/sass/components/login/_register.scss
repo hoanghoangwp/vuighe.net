@@ -1,0 +1,105 @@
+.register {
+  p {
+    font-size: inherit;
+  }
+
+  .jumbotron, .navbar-default {
+    background: #fff;
+  }
+
+  .jumbotron {
+    padding-top: 20px;
+  }
+
+  .jumbotron-header {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #D80F16;
+  }
+
+  label {
+    font-weight: unset;
+  }
+
+  .btn-vg {
+    color: #fff;
+    background: rgba(216, 15, 22, .95);
+    border-color: rgba(216, 15, 22, .95);
+  }
+
+  .btn:hover {
+    color: white;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .form-control {
+    height: 30px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, .75);
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 6px 12px;
+    background-color: #fff;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  .form-control, output {
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    display: block;
+  }
+
+  .footer {
+    color: #aaa;
+    font-size: 12px;
+  }
+
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container .jumbotron, .container-fluid .jumbotron {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 970px;
+    }
+  }
+
+
+}

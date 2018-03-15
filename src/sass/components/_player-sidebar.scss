@@ -1,0 +1,504 @@
+.player-sidebar {
+  background: #fff;
+  float: right;
+  margin: 70px 0 10px 5px;
+  border: 1px solid rgba(204, 204, 204, .75);
+  position: relative;
+
+  @media (min-width: 1705.5px) {
+    width: 395px;
+    height: 720px;
+  }
+
+  @media (max-width: 1705.5px) and (min-width: 1279px) {
+    width: 375px;
+    height: 640px;
+  }
+
+  @media (max-width: 1365px) and (min-width: 1280px) {
+    width: 375px;
+    height: 492px;
+  }
+
+  @media (max-width: 1279px) and (min-width: 1024px) {
+    width: 330px;
+    height: 470px;
+  }
+
+  @media (max-width: 1023.5px) {
+    margin: 0 auto 10px;
+    width: 100%;
+    float: none;
+  }
+
+  @media (max-width: 1023.5px) {
+    height: 100%;
+  }
+
+  .sidebar__nav > li.active > a, .sidebar__nav > li.active > a:focus, .sidebar__nav > li.active > a:hover {
+    border: none;
+    border-bottom: 2px solid #d80f16;
+  }
+
+  .sidebar__nav > li a {
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 0;
+
+    &:hover {
+      background: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .tab-content {
+    .fade {
+      animation-duration: 0s;
+      -webkit-animation-duration: 0s;
+    }
+  }
+}
+
+.film__ova {
+  margin-left: 50px;
+
+  @media (max-width: 320px) and (min-width: 295px) {
+    margin-left: 30px;
+  }
+
+  @media (max-width: 295px) {
+    margin-left: 20px;
+  }
+}
+
+.sidebar__nav {
+  margin: 0 10px;
+}
+
+.season__name {
+  width: 80px;
+  display: inline-block;
+}
+
+.film__episodes {
+  padding: 10px 0;
+  cursor: pointer;
+  height: 40px;
+  border-bottom: 1px solid #e7e7e7;
+
+  .dropdown {
+    margin-left: 10px;
+    position: static;
+
+    @media (max-width: 374px) {
+
+    }
+
+    a:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    &.open {
+      .dropdown-menu {
+        cursor: default;
+        z-index: 1000;
+        opacity: 1;
+        max-height: 206px;
+        overflow: hidden;
+      }
+    }
+  }
+
+
+  .dropdown-menu {
+    z-index: -1;
+    width: calc(100% + 2px);
+    left: -1px;
+    top: 79px;
+    margin: 0;
+    border-radius: 0;
+    padding: 0 12px;
+    border-top: none;
+    border-color: #d1d1d1;
+    box-shadow: 0 10px 10px -2px rgba(0, 0, 0, .3);
+    display: block;
+    opacity: 0;
+    transition: all .5s ease;
+    max-height: 0;
+
+    a {
+      padding: 10px 0;
+      height: 40px;
+      border-top: 1px solid #e7e7e7;
+
+      &:hover {
+        background: transparent;
+        color: #D80F16;
+      }
+    }
+  }
+}
+
+.season__long-name {
+  max-width: 230px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.season__dropdown {
+  li a:focus, li.active a {
+    color: #D80F16;
+  }
+
+  li a {
+    background: #fff !important;
+  }
+}
+
+.film__episode-range {
+  margin-left: 7px;
+  padding: 0 10px;
+  display: inline-block;
+  width: 90px;
+  background: #ebebeb;
+  text-align: right;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
+}
+
+.film__view-episodes {
+  label {
+    font-weight: 400;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  input {
+    width: 50px;
+    background: #ebebeb;
+    border: 0;
+    border-radius: 2px;
+    font-weight: bold;
+    padding-left: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.episodes__content {
+  padding-top: 5px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  & > .fade:not(.active) {
+    display: none;
+  }
+
+  & > .active {
+    display: block;
+  }
+
+  @media (max-width: 1023.5px) and (min-width: 767.5px) {
+    a {
+      &:hover {
+        color: #333;
+      }
+    }
+
+    .film__episode {
+      width: 23.8%;
+      float: left;
+      padding: 0;
+      margin: 4px;
+      height: 182px;
+
+      .episode__img {
+        margin-right: 0;
+      }
+
+      img {
+        width: 100%;
+        height: inherit;
+      }
+
+      .episode__icon {
+        i {
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+.film__episode {
+  padding: 5px 10px;
+
+  &.active {
+    img {
+      border: 2px solid #d80f16;
+    }
+
+    .episode__name {
+      color: #D80F16;
+    }
+
+    .episode__view-count {
+      color: rgba(216, 15, 22, .6);
+    }
+
+    .episode__icon {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      img {
+        border: 2px solid #d80f16;
+      }
+
+      .episode__name {
+        color: #D80F16;
+      }
+
+      .episode__view-count {
+        color: rgba(216, 15, 22, .6);
+      }
+
+      .episode__icon {
+        display: block;
+      }
+    }
+  }
+}
+
+.episode__img {
+  margin-right: 10px;
+  position: relative;
+
+  img {
+    width: 106px;
+    height: 62px;
+  }
+}
+
+.episode__preview {
+  width: calc(100% - 116px);
+
+  @media (max-width: 1023.5px) and (min-width: 768px) {
+    float: none !important;
+    width: 100%;
+  }
+}
+
+.episode__img {
+  @media (max-width: 1023.5px) and (min-width: 768px) {
+    float: none !important;
+  }
+}
+
+.episode__name {
+  max-height: 48px;
+  line-height: 22px;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.episode__view-count {
+  font-size: 12px;
+  color: #999;
+}
+
+.episode__icon {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .75);
+  display: none;
+
+  i {
+    display: inline-block;
+    background: rgba(0, 0, 0, .5);
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-left: 2px;
+  }
+}
+
+.comment__form {
+  padding: 10px;
+  position: relative;
+
+  input, .emoji-wysiwyg-editor {
+    padding: 5px 25px 5px 10px;
+    height: 30px !important;
+    min-height: 30px !important;
+    overflow: hidden;
+    border-color: #ddd;
+    border-radius: 2px;
+    color: #555;
+    box-shadow: none;
+
+    &:focus {
+      border-color: #bbb;
+      box-shadow: none;
+    }
+  }
+}
+
+.comment__emotion {
+  display: none;
+}
+
+.emoji-menu {
+  right: 10px;
+  top: 50px;
+}
+
+.comment__emotion, .emoji-picker-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ccc;
+  cursor: pointer;
+  margin: 0;
+  width: 25px;
+  text-align: center;
+}
+
+.comment__field {
+  padding: 0 10px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+
+  .comment {
+    padding: 10px 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(204, 204, 204, .35);
+  }
+}
+
+.comment__img {
+  margin-right: 10px;
+
+  img {
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+  }
+}
+
+.comment__content {
+  width: calc(100% - 40px);
+  font-size: 13px;
+
+  .user__name {
+    color: #0bb586;
+    font-weight: 600;
+  }
+
+  .comment__contact {
+    font-size: 12px;
+    margin-bottom: 5px;
+
+    a {
+      margin-right: 10px;
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    i {
+      margin-right: 3px;
+    }
+  }
+}
+
+.comment__reply {
+  font-size: 11px;
+  font-style: italic;
+  color: #0bb586;
+  margin-left: 10px;
+  margin-bottom: 0;
+
+  &:hover {
+    text-decoration: none;
+    color: #0bb586;
+  }
+}
+
+.content--resize {
+  @media (min-width: 1706px) {
+    height: 627px;
+  }
+
+  @media (max-width: 1706px) and (min-width: 1365px) {
+    height: 549px;
+  }
+
+  @media (max-width: 1365px) and (min-width: 1279px) {
+    height: 401px;
+  }
+
+  @media (max-width: 1279px) and (min-width: 1024px) {
+    height: 378px;
+  }
+
+  @media (max-width: 1023.5px) and (min-width: 799.5px) {
+    height: 489px;
+  }
+
+  @media (max-width: 799.5px) {
+    height: 309px;
+  }
+}
+
+.ova__content, .episodes__content {
+  @media (min-width: 1706px) {
+    height: 638px;
+  }
+
+  @media (max-width: 1706px) and (min-width: 1365px) {
+    height: 558px;
+  }
+
+  @media (max-width: 1365px) and (min-width: 1279px) {
+    height: 411px;
+  }
+
+  @media (max-width: 1279px) and (min-width: 1024px) {
+    height: 388px;
+  }
+}

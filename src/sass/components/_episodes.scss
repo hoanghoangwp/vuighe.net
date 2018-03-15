@@ -1,0 +1,614 @@
+.main__episodes {
+  .episode {
+    position: relative;
+    display: inline-block;
+    max-width: 24.75%;
+    height: 240px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (min-width: 1706px) {
+      width: 19.75%;
+      height: 227px;
+
+      &:not(:nth-child(5n)) {
+        margin-right: calc((100% - 19.77% * 5) / 4);
+      }
+    }
+
+    @media (max-width: 1706px) and (min-width: 1023.5px) {
+      max-width: 24.8%;
+      width: 24.8%;
+
+      &:not(:nth-child(4n)) {
+        margin-right: calc((100% - 24.8% * 4) / 3);
+      }
+    }
+
+    @media (max-width: 1365px) and (min-width: 1023.5px) {
+      height: 167px;
+    }
+
+    @media (max-width: 1365px) and (min-width: 1278.5px) {
+      height: 213px;
+    }
+
+    @media (max-width: 1023.5px) and (min-width: 767.5px) {
+      max-width: 32.9%;
+      width: 32.9%;
+      height: 187px;
+
+      &:not(:nth-child(3n)) {
+        margin-right: calc((100% - 33.01% * 3) / 2);
+      }
+    }
+
+    @media (max-width: 800px) and (min-width: 768px) {
+      height: 171px;
+    }
+
+    @media (max-width: 767.5px) and (min-width: 375.5px) {
+      max-width: 49.3%;
+      width: 49.3%;
+      height: 214px;
+
+      &:not(:nth-child(2n)) {
+        margin-right: calc(100% - 49.5% * 2);
+      }
+    }
+
+    @media (max-width: 639.5px) and (min-width: 479.5px) {
+      height: 170px;
+    }
+
+    @media (max-width: 479.5px) and (min-width: 375.5px) {
+      height: 124px;
+
+      .view, .like, .episode-name {
+        font-size: 10px !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 375.5px) {
+      max-width: 100%;
+      width: 100%;
+      height: 82px;
+      margin-right: 0;
+    }
+  }
+
+  .inner_episodes.home {
+    max-height: 490px;
+    overflow: hidden;
+
+    @media (max-width: 1365px) and (min-width: 1023.5px) {
+      max-height: 352px;
+    }
+
+    @media (max-width: 1365px) and (min-width: 1278.5px) {
+      max-height: 444px;
+    }
+
+    @media (max-width: 1023.5px) and (min-width: 767.5px) {
+      max-height: 594px;
+    }
+
+    @media (max-width: 800px) and (min-width: 768px) {
+      max-height: 546px;
+    }
+
+    @media (max-width: 767.5px) {
+      max-height: none;
+    }
+  }
+
+  .collection .inner_episodes {
+    max-height: none !important;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 375.5px) {
+      width: 120px;
+      float: left;
+    }
+  }
+
+  .hover {
+    color: #eee;
+    width: 100%;
+    background: none;
+    -webkit-transition-property: height;
+    transition-property: height;
+    position: absolute;
+    bottom: 0;
+
+    @media (min-width: 1023.5px) {
+      -webkit-transition: all 0.5s ease-in;
+      transition: all 0.5s ease-in;
+      height: 67px;
+    }
+
+    @media (min-width: 375.5px) {
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3), rgba(0, 0, 0, .5), rgba(0, 0, 0, .7), rgba(0, 0, 0, .9));
+    }
+
+    @media (max-width: 375.5px) {
+      float: left;
+      position: static !important;
+      width: calc(100% - 120px);
+      color: #000;
+    }
+  }
+
+  .name {
+    padding-left: 5%;
+    margin: 18px 0 2px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (max-width: 640px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 375.5px) {
+      margin: 0 0 2px;
+      font-size: 14px;
+    }
+  }
+
+  .episode-name {
+    padding-left: 5%;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 50%;
+    display: inline-block;
+    overflow: hidden;
+
+    @media (max-width: 639.5px) and (min-width: 375.5px) {
+      width: 100%;
+    }
+
+    @media (max-width: 375.5px) {
+      width: 100%;
+      margin-bottom: -5px;
+    }
+  }
+
+  .view {
+    font-size: 12px;
+    position: absolute;
+    right: 5%;
+
+    &:not(.view1) {
+      @media (max-width: 639.5px) and (min-width: 375.5px) {
+        display: none;
+      }
+    }
+  }
+
+  .button-preview {
+    color: red;
+    background-color: white;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.6s ease;
+    margin: auto;
+    width: 80px;
+    line-height: 34px;
+
+    @media (max-width: 1279px) {
+      display: none;
+    }
+  }
+
+  .button {
+    background: rgba(255, 255, 255, 0.75);
+    transition: all .5s ease-out;
+    color: rgba(216, 15, 22, 0.75);
+    font-weight: bold;
+
+    &:hover {
+      color: #fff;
+      background: #D80F16;
+    }
+  }
+
+  .hover--bg-red .button:hover {
+    background: rgba(95,187,71,.75);
+  }
+
+  a:hover .episode-name {
+    @media (min-width: 1024px) {
+      padding: 0;
+      width: 90%;
+    }
+
+    @media (max-width: 1024px) and (min-width: 640px) {
+      white-space: normal;
+      line-height: 20px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    a:hover {
+      .name {
+        margin: 30px auto 20px;
+        width: 90%;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    a:hover {
+      .hover {
+        text-align: center;
+        height: 100%;
+        background: rgba(11, 181, 134, .75);
+        color: white;
+        transition: all 0.3s ease-out;
+      }
+
+      .name {
+        padding: 0;
+      }
+
+      .view:not(.view1) {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-bottom: 10px;
+      }
+
+      .button-preview {
+        opacity: 1;
+        bottom: 25%;
+        transition: opacity 0.4s ease-out;
+        -moz-transition: opacity 0.4s ease-out;
+        -webkit-transition: opacity 0.4s ease-out;
+      }
+    }
+
+    .button-preview:hover .button {
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+
+    .button-preview:hover .button {
+      color: white;
+    }
+  }
+}
+
+.episodes {
+  margin: 15px 0;
+
+  &.collection {
+    .episode {
+      height: auto;
+
+      img {
+        @media (max-width: 375.5px) {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+  }
+}
+
+.episodes__title {
+  a {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.episodes__title--color-red {
+  a {
+    color: #D80F16;
+  }
+
+  &:hover, &:focus {
+    color: #900a0f;
+  }
+}
+
+.episodes__title--color-blue {
+  a, &:hover, &:focus {
+    color: #0387d1;
+  }
+}
+
+.episode--watch-more {
+  width: 120px;
+  margin: 10px auto 0;
+  padding-right: 5px;
+  opacity: .75;
+  cursor: pointer;
+
+  &.episode__button {
+    opacity: 1;
+  }
+
+  a {
+    color: #fff;
+    background-color: #D80F16;
+    border-color: #d43f3a;
+    border-radius: 2px;
+
+    &:hover, &:focus, &:active:focus {
+      background-color: #a80c11;
+      border-color: #ac2925;
+    }
+  }
+}
+
+.viewer {
+  @media (max-width: 375.5px) {
+    color: #444;
+  }
+
+  span {
+    @media (max-width: 375.5px) {
+      display: block;
+      position: static !important;
+      width: 100%;
+      padding-left: 5%;
+    }
+  }
+}
+
+.main__episodes {
+  .articles {
+    .episode {
+      margin-bottom: 6px;
+    }
+
+    .name {
+      @media (max-width: 1023.5px) and (min-width: 375.5px) {
+        white-space: normal;
+      }
+    }
+
+    .info, .stat {
+      display: none;
+      font-size: 12px;
+    }
+
+    .stat {
+      line-height: 5px;
+    }
+
+    .view1 {
+      @media (max-width: 1023.5px) {
+        position: static;
+        padding-left: 5%;
+      }
+
+      @media (min-width: 375.5px) {
+        left: 5% !important;
+        right: auto !important;
+        line-height: 25px;
+        bottom: 2px;
+      }
+
+      @media (max-width: 480px) and (min-width: 375.5px) {
+        line-height: 15px;
+      }
+
+      @media (max-width: 375.5px) {
+        margin-bottom: -5px;
+      }
+    }
+
+    .like, .date {
+      font-size: 12px;
+      position: absolute;
+      right: 5%;
+      line-height: 25px;
+      bottom: 2px;
+    }
+
+    .title {
+      position: absolute;
+      line-height: 20px;
+      width: 102%;
+      margin: 0;
+      bottom: 30px;
+      font-size: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      @media (max-width: 1023.5px) and (min-width: 375.5px) {
+        white-space: normal;
+        bottom: auto;
+        width: auto;
+        height: 42px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+        position: static;
+      }
+
+      @media (max-width: 375.5px) {
+        padding-left: 5%;
+      }
+    }
+
+    a:hover .title {
+      @media (min-width: 1023.5px) {
+        white-space: unset;
+        width: 96%;
+      }
+    }
+
+    .hover-news {
+      color: rgb(255, 255, 255);
+      width: 100%;
+      height: 65px;
+      padding: 10px 15px;
+      background: rgba(13, 13, 14, 0.3);
+      -webkit-transition-property: height; /* Safari */
+      transition-property: height;
+      -webkit-transition: all 0.1s ease-in; /* For Safari 3.1 to 6.0 */
+      transition: all 0.1s ease-in;
+      position: absolute;
+      bottom: 0;
+
+      @media (max-width: 375.5px) {
+        padding: 0;
+        background: transparent;
+        float: left;
+        position: static !important;
+        width: calc(100% - 120px);
+        color: #000;
+      }
+    }
+
+    @media (min-width: 1023.5px) {
+      a:hover .hover-news {
+        height: 100%;
+        background: rgba(13, 13, 14, 0.5);
+        color: white;
+        -webkit-transition: all 0.4s ease-out;
+        -moz-transition: all 0.4s ease-out;
+        -o-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+      }
+    }
+
+    @media (min-width: 1023.5px) {
+      a:hover .hover--bg-blue {
+        background: rgba(37, 127, 230, 0.75);
+      }
+
+      a:hover .hover--bg-red {
+        background: rgba(216, 15, 22, 0.75);
+      }
+    }
+
+    a:hover .info, a:hover .stat {
+      @media (min-width: 1023.5px) {
+        display: block;
+      }
+    }
+
+    .article__viewer {
+      @media (max-width: 1023.5px) and (min-width: 375.5px) {
+        display: none;
+      }
+
+      .view1 {
+        @media (max-width: 375.5px) {
+          margin-top: 5px;
+        }
+      }
+
+      .date {
+        @media (max-width: 375.5px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.top-anime {
+  position: absolute;
+  top: 0;
+  width: 45px;
+  height: 45px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #444;
+
+  &.anime-top-1 {
+    background: #D80F16;
+
+    div {
+      border-color: #a80c11;
+    }
+  }
+
+  &.anime-top-2 {
+    background: #4077bc;
+
+    div {
+      border-color: #335f96;
+    }
+  }
+
+  &.anime-top-3 {
+    background: #e3e538;
+
+    div {
+      border-color: #cdcf1b;
+    }
+  }
+
+  &.anime-top-4 {
+    background: #5fbb47;
+
+    div {
+      border-color: #4c9738;
+    }
+  }
+
+  div {
+    width: 39px;
+    height: 42px;
+    margin: auto;
+    text-align: center;
+    line-height: 42px;
+    border: 1px dashed #777;
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  @media (max-width: 479.5px) {
+    width: 30px;
+    height: 30px;
+
+    div {
+      width: 24px;
+      height: 27px;
+      line-height: 27px;
+      font-size: 12px;
+    }
+  }
+}
+
+.inner--mb-9 > div {
+  margin-bottom: 11px !important;
+}

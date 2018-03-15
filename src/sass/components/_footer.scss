@@ -1,0 +1,142 @@
+.footer {
+  width: 100%;
+  font-size: 12px;
+  background-color: black;
+  color: #ccc;
+  margin-top: 70px;
+  overflow: hidden;
+
+  p {
+    margin: 0;
+  }
+
+  .left {
+    padding: 10px;
+    margin: 12px 0;
+    width: 50%;
+    float: left;
+
+    @media (max-width: 767.5px) {
+      display: none;
+    }
+  }
+
+  .center {
+    padding: 10px;
+    margin: 12px 0;
+    width: 25%;
+    float: left;
+
+    @media (max-width: 1054px) and (min-width: 768px) {
+      width: 50%;
+      float: right;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 767.5px) and (min-width: 639.5px) {
+      float: left;
+      width: 50%;
+    }
+
+    @media (max-width: 639.5px) {
+      float: none;
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+
+  .right {
+    padding: 25px 10px;
+    width: 25%;
+    float: left;
+    font-size: 35px;
+
+    @media (max-width: 1054px) and (min-width: 768px) {
+      width: 50%;
+      float: right;
+      padding: 0 10px 10px 10px;
+    }
+
+    @media (max-width: 767.5px) and (min-width: 639.5px) {
+      padding: 30px 10px 10px;
+      float: right;
+      width: 50%;
+    }
+
+    @media (max-width: 639.5px) {
+      float: none;
+      width: 100%;
+      padding: 10px 10px 20px 10px;
+    }
+  }
+
+  a {
+    color: #ccc;
+  }
+
+  a:hover, a:focus {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  .fa-facebook-square {
+    background-color: #2b2b2b;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    border-radius: 2px;
+    text-align: center;
+    transition: all .5s;
+
+    &:hover {
+      color: #3b559f;
+      background: #fff;
+    }
+  }
+
+  .fa-youtube-square {
+    background-color: #2b2b2b;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 5px;
+    transition: all .5s;
+
+    &:hover {
+      color: #ff0000;
+      background: #fff;
+    }
+  }
+
+  .fa-twitter-square {
+    background-color: #2b2b2b;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-left: 5px;
+    transition: all .5s;
+
+    &:hover {
+      color: #16b9ed;
+      background: #fff;
+    }
+  }
+
+  .fa-google-plus-official {
+    background-color: #2b2b2b;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-left: 5px;
+    transition: all .5s;
+
+    &:hover {
+      color: #dd4e42;
+      background: #efefef;
+    }
+  }
+}
