@@ -1,0 +1,57 @@
+.form__header {
+  overflow: hidden;
+  padding: 0 20px 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dotted #D80F16;
+
+  @media (max-width: 576px) {
+    padding: 0 0 20px;
+  }
+}
+
+.form__image {
+  float: left;
+
+  @media (max-width: 576px) {
+    width: 100%;
+
+    img {
+      margin: auto;
+    }
+  }
+}
+
+.form__title {
+  float: left;
+  padding: 0 15px;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.history__cards {
+  .card, .code {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .history-header {
+    margin-bottom: 10px;
+    color: #0BB586;
+    font-size: 20px;
+    font-weight: 700;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.container__history__wrapper {
+  margin-top: 90px;
+}

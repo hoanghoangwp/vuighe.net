@@ -1,0 +1,31 @@
+.page-header {
+    height: 70px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #D80F16;
+}
+
+.text{
+    padding-top:10px;
+}
+.text div{
+    font-size:13px;
+}
+.page-header .text h4 {
+    margin: 5px 0;
+}
+h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+.page-header .logo {
+    float: left;
+    width: 58px;
+    height: 58px;
+    margin-right: 20px;
+}
+

@@ -1,0 +1,135 @@
+.container__wrapper {
+  margin-top: 175px;
+
+  @media (max-width: 1023.98px) {
+    margin-top: 90px;
+  }
+}
+
+.container__wrapper__element {
+  padding: 20px;
+  border: 1px solid rgba(204,204,204,.5);
+  background: url('/../../vuighe.net/dist/images/pattern.png');
+}
+
+.user__image {
+  max-width: 210px;
+  padding: 40px;
+  margin-bottom: 20px;
+  background: #b2b2b2;
+
+  @media (max-width: 1023.98px) {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+
+  @media (max-width: 576px) {
+    margin: auto !important;
+    float: none;
+  }
+}
+
+.user__information {
+  @media (max-width: 1023.98px) {
+    float: left;
+  }
+
+  @media (max-width: 576px) {
+    float: none;
+    width: 210px;
+    margin: 10px auto 0;
+  }
+}
+
+.user__information__wrapper {
+  margin-bottom: 5px;
+}
+
+.user__information__icon {
+  display: inline-block;
+  width: 30px;
+}
+
+.container__user__information {
+  float: left;
+  max-width: 250px;
+  overflow: hidden;
+
+  @media (max-width: 1023.98px) {
+    float: none;
+    max-width: 100%;
+  }
+}
+
+.container__service {
+  float: left;
+  width: calc(100% - 265px);
+  margin-left: 15px;
+
+  @media (max-width: 1023.98px) {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+}
+
+.container__service__introduction {
+  padding-bottom: 38px;
+  margin-bottom: 20px;
+}
+
+.service__element {
+  float: left;
+  width: 25%;
+
+  @media (min-width: 400px) and (max-width: 735px) {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 400px) {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.service__element__wrapper {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+
+  @media (min-width: 400px) and (max-width: 735px) {
+    width: 80%;
+  }
+
+  @media (max-width: 400px) {
+    width: 80%;
+  }
+
+  .gift {
+    font-size: 16px;
+  }
+
+  .bonus {
+    color: #259bff;
+  }
+
+  h3 {
+    color: #D80F16;
+  }
+
+  hr {
+    width: 50%;
+    margin: 20px auto 10px;
+  }
+
+  .btn-buy-vgem {
+    margin-top: 10px;
+    border-color: #D80F16;
+    background: #D80F16;
+    color: #fff;
+  }
+}

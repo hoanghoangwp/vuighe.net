@@ -7,12 +7,8 @@
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../vendors/owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../vendors/owl-carousel/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../vendors/perfect-scrollbar/css/perfect-scrollbar.css">
     <link rel="stylesheet" href="css/style.bundle.css">
     <script src="js/angular.min.js"></script>
-    <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=vietnamese" rel="stylesheet">
 </head>
 <body ng-app="myApp">
@@ -63,22 +59,27 @@
                     <li><a data-toggle="tab" href="#tab1" class="navbar__tab tab1"><i class="fa fa-bell-o"></i></a></li>
                     <li><a data-toggle="tab" href="#tab2" class="navbar__tab tab2"><i class="fa fa-film"></i></a></li>
                     <li><a data-toggle="tab" href="#tab3" class="navbar__tab tab3"><img src="images/avatar.jpg" alt=""
-                                                                                   class="img-responsive"></a></li>
+                                                                                        class="img-responsive"></a></li>
                 </ul>
                 <a href="#" class="text-center text-black pull-right btn__login login__icon hidden-xs">
                     <i class="fa fa-ellipsis-v"></i>
                 </a>
                 <div class="navbar--collapse2">
                     <ul class="nav nav-tabs signed-in__user pull-right visible-xs">
-                        <li><a data-toggle="tab" href="#tab1" class="navbar__tab tab1"><i class="fa fa-bell-o"></i></a></li>
-                        <li><a data-toggle="tab" href="#tab2" class="navbar__tab tab2"><i class="fa fa-film"></i></a></li>
-                        <li><a data-toggle="tab" href="#tab3" class="navbar__tab tab3"><img src="images/avatar.jpg" alt=""
-                                                                                       class="img-responsive"></a></li>
+                        <li><a data-toggle="tab" href="#tab1" class="navbar__tab tab1"><i class="fa fa-bell-o"></i></a>
+                        </li>
+                        <li><a data-toggle="tab" href="#tab2" class="navbar__tab tab2"><i class="fa fa-film"></i></a>
+                        </li>
+                        <li><a data-toggle="tab" href="#tab3" class="navbar__tab tab3"><img src="images/avatar.jpg"
+                                                                                            alt=""
+                                                                                            class="img-responsive"></a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="tab-content signed-in__notification">
-                    <div id="tab1" class="tab-pane fade user__notification notification--with-scrollbar perfect-scrollbar">
+                    <div id="tab1"
+                         class="tab-pane fade user__notification notification--with-scrollbar perfect-scrollbar">
                         <div class="tab-pane__element">
                             <a href="#">
                                 <div class="tab-pane__element__image pull-left">
@@ -244,7 +245,8 @@
                                             <img src="images/preview_episode.jpg" alt="" class="img-responsive">
                                         </div>
                                         <div class="tab-pane__element__content pull-right">
-                                            <p>Chào mừng bạn tham gia VuiGhe.Net, hãy cùng trải nghiệm các tính năng và tham gia thảo
+                                            <p>Chào mừng bạn tham gia VuiGhe.Net, hãy cùng trải nghiệm các tính năng và
+                                                tham gia thảo
                                                 luận phim cùng mọi người nhé!</p>
                                             <h6>1 tháng trước</h6>
                                         </div>
@@ -256,7 +258,8 @@
                                             <img src="images/preview_episode.jpg" alt="" class="img-responsive">
                                         </div>
                                         <div class="tab-pane__element__content pull-right">
-                                            <p>Chào mừng bạn tham gia VuiGhe.Net, hãy cùng trải nghiệm các tính năng và tham gia thảo
+                                            <p>Chào mừng bạn tham gia VuiGhe.Net, hãy cùng trải nghiệm các tính năng và
+                                                tham gia thảo
                                                 luận phim cùng mọi người nhé!</p>
                                             <h6>1 tháng trước</h6>
                                         </div>
@@ -385,7 +388,8 @@
                             <p><a href="#"><i class="fa fa-star"></i>Nâng cấp VIP</a></p>
                             <p><a href="#"><i class="fa fa-diamond"></i>Nạp thêm VGEM</a></p>
                             <p><a href="#"><i class="fa fa-home"></i>Lịch sử giao dịch</a></p>
-                            <p><a href="#" class="log-out"><i class="fa fa-power-off" style="color:#d80f16"></i>Đăng xuất</a></p>
+                            <p><a href="#" class="log-out"><i class="fa fa-power-off" style="color:#d80f16"></i>Đăng
+                                xuất</a></p>
                         </div>
                     </div>
                 </div>
@@ -394,245 +398,24 @@
     </header>
     <main>
         <div class="container">
-            <div class="main__slides">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
+            <div class="container__wrapper container__history__wrapper">
+                <div class="form__header">
+                    <div class="form__image">
+                        <img src="images/key.png" alt="" class="img-responsive">
                     </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#">
-                            <img src="images/slide.jpg" alt="" class="img-responsive">
-                            <div class="slide__icon">
-                                <i class="fa fa-play"></i>
-                            </div>
-                        </a>
+                    <div class="form__title">
+                        <h4>LỊCH SỬ GIAO DỊCH</h4>
+                        <p>Liệt kê các giao dịch bạn đã thực hiện</p>
                     </div>
                 </div>
-            </div>
-            <div class="main__episodes">
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="new-episodes.html">Tập mới nhất <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes home">
-                        <div class="episode" ng-repeat="episode in newEpisodes | limitTo:limit">
-                            <a href="detail.html">
-                                <img src="{{ episode.image }}" class="img-responsive"
-                                     alt="{{ episode.episodeName }}">
-                                <div class="hover">
-                                    <p class="name">{{ episode.name }}</p>
-                                    <div class="viewer">
-                                        <span class="episode-name">{{ episode.episodeName }}</span>
-                                        <span class="view">{{ episode.views }} lượt xem</span>
-                                    </div>
-                                    <div class="button-preview">
-                                        <div class="button">
-                                            <span>XEM NGAY</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                <div class="history__cards">
+                    <div class="card container__wrapper__element">
+                        <div class="history-header">GIAO DỊCH NẠP VGEM</div>
+                        <div class="show">Bạn chưa thực hiện giao dịch nào</div>
                     </div>
-                </div>
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="#">Tin tức mới <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes inner--mb-9 home">
-                        <div class="episode" ng-repeat="article in articles | limitTo:limit">
-                            <a href="#">
-                                <img src="{{ article.image }}" alt="{{ article.name }}">
-                                <div class="hover-news">
-                                    <p class="title">{{ article.name }}</p>
-                                    <div class="viewer article__viewer">
-                                        <span class="view view1">{{ article.views }} lượt xem</span>
-                                        <span class="date">{{ article.date }}</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="#">Video mới <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes inner--mb-9 home">
-                        <div class="episode" ng-repeat="video in videos | limitTo:limit">
-                            <a href="#">
-                                <img src="{{ video.image }}">
-                                <div class="hover-news">
-                                    <p class="title">{{ video.name }}</p>
-                                    <div class="viewer article__viewer">
-                                        <span class="view view1">{{ video.views }} lượt xem</span>
-                                        <span class="date">{{ video.date }}</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="episodes articles collection">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="collections.html">Bộ Sưu Tập <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes">
-                        <div class="episode" ng-repeat="collection in collections | limitTo:limit">
-                            <a href="collection-animes.html">
-                                <img src="{{ collection.image }}">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="#">Hôm nay xem gì <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes inner--mb-9 home">
-                        <div class="episode" ng-repeat="anime in animesToday | limitTo:limit">
-                            <a href="detail.html">
-                                <img src="{{ anime.image }}">
-                                <div class="hover hover--bg-blue">
-                                    <p class="name">{{ anime.name }}</p>
-                                    <p class="info" ng-bind-html="anime.categories"></p>
-                                    <p class="stat">{{ anime.episodes }}</p>
-                                    <div class="viewer">
-                                        <span class="view view1">{{ anime.views }} lượt xem</span>
-                                        <span class="like">{{ anime.likes }} thích</span>
-                                    </div>
-
-                                    <div class="button-preview">
-                                        <div class="button">
-                                            <span>XEM NGAY</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="anime-chart.html">Bảng xếp hạng <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes home">
-                        <div class="episode" ng-repeat="anime in chart track by $index | limitTo:limit">
-                            <a href="detail.html">
-                                <img src="{{ anime.image }}" class="img-responsive"
-                                     alt="{{ anime.name }}">
-                                <div class="hover hover--bg-red">
-                                    <p class="name">{{ anime.name}}</p>
-                                    <p class="info" ng-bind-html="anime.categories" compile-template></p>
-                                    <p class="stat">{{ anime.episodes }}</p>
-                                    <div class="viewer">
-                                        <span class="view view1">{{ anime.views }} lượt xem</span>
-                                        <span class="like">{{ anime.likes}} thích</span>
-                                    </div>
-
-                                    <div class="button-preview">
-                                        <div class="button">
-                                            <span>XEM NGAY</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="top-anime anime-top-{{ $index + 1 }}">
-                                    <div class="top-1__number">
-                                        {{ $index + 1 }}
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="episodes articles">
-                    <h3 class="episodes__title episodes__title--color-red"><a href="index.html">Tất Cả Anime <i
-                            class="fa fa-angle-right"></i></a></h3>
-                    <div class="inner_episodes home">
-                        <div class="episode" ng-repeat="anime in animes | limitTo:limit">
-                            <a href="detail.html">
-                                <img src="{{ anime.image }}" class="img-responsive"
-                                     alt="{{ anime.name }}">
-                                <div class="hover">
-                                    <p class="name">{{ anime.name}}</p>
-                                    <p class="info" ng-bind-html="anime.categories" compile-template></p>
-                                    <p class="stat" ng-bind-html="anime.episodes" compile-template></p>
-                                    <div class="viewer">
-                                        <span class="view view1">{{ anime.views }} lượt xem</span>
-                                        <span class="like">{{ anime.likes }} thích</span>
-                                    </div>
-
-                                    <div class="button-preview">
-                                        <div class="button">
-                                            <span>XEM NGAY</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="code container__wrapper__element">
+                        <div class="history-header">NÂNG CẤP TÀI KHOẢN</div>
+                        <div class="show">Bạn chưa thực hiện giao dịch nào</div>
                     </div>
                 </div>
             </div>
@@ -641,49 +424,8 @@
     <footer ng-include="'components/footer.html'"></footer>
 </div>
 <script src="../vendors/jquery/jquery.min.js"></script>
-<script src="../vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-<script>
-    new PerfectScrollbar('.perfect-scrollbar');
-    new PerfectScrollbar('.perfect-scrollbar1');
-    new PerfectScrollbar('.perfect-scrollbar2');
-    new PerfectScrollbar('.perfect-scrollbar3');
-</script>
 <script src="../vendors/bootstrap/bootstrap.min.js"></script>
-<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                }
-            }
-        });
-    });
-</script>
 <script src="js/main.bundle.js"></script>
 <script src="js/main.js"></script>
-<script>
-    app = angular.module('myApp', ['ngSanitize']);
-    app.controller('myctrl', function ($scope, $http) {
-        $http.get('json/home.json')
-            .then(function (response) {
-                //First function handles success
-                $scope.newEpisodes = response.data.newEpisodes;
-                $scope.articles = response.data.articles;
-                $scope.videos = response.data.videos;
-                $scope.collections = response.data.collections;
-                $scope.chart = response.data.chart;
-                $scope.animes = response.data.animes;
-                $scope.animesToday = response.data.animesToday;
-            }, function (response) {
-                //Second function handles error
-                $scope.content = "Something went wrong";
-            });
-        $scope.limit = 10;
-    });
-</script>
 </body>
 </html>
