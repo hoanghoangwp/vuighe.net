@@ -1,0 +1,87 @@
+.buy-vgem__container {
+  background-image: url(https://d3.violet.vn/uploads/previews/document/1/161/371/caro_trang.png);
+  padding: 40px;
+  border: 1px solid rgba(204,204,204,.5);
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    color: #0BB586;
+    font-size: 20px;
+    font-weight: 700;
+
+    @media (max-width: 500px) {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.buy-vgem__item {
+  height: 40px;
+  line-height: 40px;
+
+  @media (max-width: 500px) {
+    height: auto;
+    line-height: 25px;
+    text-align: center;
+  }
+
+  label {
+    display: inline-block;
+    width: 100px;
+    font-weight: 400;
+
+    @media (max-width: 500px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  input, select {
+    border-color: #ccc !important;
+    display: inline-block!important;
+    width: calc(100% - 120px)!important;
+    height: 30px;
+    border-radius: 0;
+    box-shadow: none !important;
+
+    &:focus {
+      outline: none !important;
+      border-color: #d80f16;
+    }
+
+    @media (max-width: 500px) {
+      width: 100% !important;
+      margin-bottom: 10px;
+    }
+  }
+
+  button {
+    background: #d80f16 !important;
+    border-color: #d80f16 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    &:hover {
+      border-color: darkred !important;
+      background-color: darkred !important;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 500px) {
+      width: 100% !important;
+    }
+  }
+}
+
+.buy-vgem--hidden {
+  @media (max-width: 500px) {
+    display: none !important;
+  }
+}

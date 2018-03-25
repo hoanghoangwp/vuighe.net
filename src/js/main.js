@@ -51,7 +51,6 @@ function init_toggleMenu() {
 
 function init_clickTabs() {
     $(document).on('click', function (e) {
-        console.log(e.target.closest('.signed-in__user > .active'));
         if ((!e.target.closest('.tab-pane') && !e.target.closest('.navbar__tab'))) {
             $('.signed-in__notification > div').removeClass('active in');
             $('.signed-in__user > li').removeClass('active');

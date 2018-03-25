@@ -4,6 +4,20 @@
   @media (max-width: 1023.98px) {
     margin-top: 90px;
   }
+
+  .btn {
+    width: 50%;
+
+    &:hover {
+      border-color: darkred;
+      background-color: darkred;
+    }
+
+    &:focus {
+      outline: none;
+      color: white;
+    }
+  }
 }
 
 .container__wrapper__element {
@@ -98,7 +112,7 @@
 
 .service__element__wrapper {
   width: 90%;
-  margin: auto;
+  margin: auto !important;
   text-align: center;
 
   @media (min-width: 400px) and (max-width: 735px) {
@@ -132,4 +146,22 @@
     background: #D80F16;
     color: #fff;
   }
+}
+
+.service__element .container__wrapper__element {
+  border-top: 5px solid #D80F16;
+}
+
+
+
+.container__user__information {
+  background: url(https://d3.violet.vn/uploads/previews/document/1/161/371/caro_trang.png);
+}
+
+.container__service__introduction {
+  background: url(https://d3.violet.vn/uploads/previews/document/1/161/371/caro_trang.png);
+}
+
+.service__element .container__wrapper__element {
+  background: url(https://d3.violet.vn/uploads/previews/document/1/161/371/caro_trang.png);
 }

@@ -55,3 +55,27 @@
 .container__history__wrapper {
   margin-top: 90px;
 }
+
+.user__history {
+  th {
+    text-align: center;
+  }
+
+  .table {
+    text-align: center;
+  }
+
+  @media (min-width: 360px) and (max-width: 500px) {
+    //th, td {
+    //  font-size: 12px;
+    //}
+
+    .table {
+      width: 100%;
+    }
+  }
+
+  .history-header, .show {
+    text-align: center;
+  }
+}
