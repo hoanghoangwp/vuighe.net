@@ -491,14 +491,7 @@
 <script>
     $(document).ready(function () {
         $('.failed-sweetalert').on('click', function () {
-            document.querySelector('.failed-sweetalert').onclick = function(){
-                swal({
-                    title: 'Error!',
-                    text: 'Do you want to continue',
-                    type: 'error',
-                    confirmButtonText: 'Cool'
-                })
-            };
+            swal("Here's a message!", "It's pretty, isn't it?");
         });
     })
 </script>
