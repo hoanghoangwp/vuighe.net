@@ -389,7 +389,8 @@
                             <p><a href="user-upgrade.html"><i class="fa fa-star"></i>Nâng cấp VIP</a></p>
                             <p><a href="user-loaded.html"><i class="fa fa-diamond"></i>Nạp thêm VGEM</a></p>
                             <p><a href="user-history.html"><i class="fa fa-home"></i>Lịch sử giao dịch</a></p>
-                            <p><a href="#" class="log-out"><i class="fa fa-power-off" style="color:#d80f16"></i>Đăng xuất</a></p>
+                            <p><a href="#" class="log-out"><i class="fa fa-power-off" style="color:#d80f16"></i>Đăng
+                                xuất</a></p>
                         </div>
                     </div>
                 </div>
@@ -450,7 +451,7 @@
                                 <hr>
                                 <p class="bonus">Tặng 10 ngày</p>
                                 <h3>500VGEM</h3>
-                                <button class="btn btn-default btn-buy-vgem">Mua</button>
+                                <button class="btn btn-default btn-buy-vgem failed-sweetalert">Mua</button>
                             </div>
                         </div>
                         <div class="service__element">
@@ -468,7 +469,7 @@
                                 <hr>
                                 <p class="bonus">Tặng 60 ngày</p>
                                 <h3>2700VGEM</h3>
-                                <button class="btn btn-default btn-buy-vgem">Mua</button>
+                                <button class="btn btn-default btn-buy-vgem failed-sweetalert">Mua</button>
                             </div>
                         </div>
                         <div class="service__element">
@@ -477,7 +478,7 @@
                                 <hr>
                                 <p class="bonus">Tặng 180 ngày</p>
                                 <h3>5000VGEM</h3>
-                                <button class="btn btn-default btn-buy-vgem failed-sweetalert">Mua</button>
+                                <button class="btn btn-default btn-buy-vgem successful-sweetalert">Mua</button>
                             </div>
                         </div>
                     </div>
@@ -491,9 +492,33 @@
 <script>
     $(document).ready(function () {
         $('.failed-sweetalert').on('click', function () {
-            swal("Here's a message!", "It's pretty, isn't it?");
+            swal({
+                title: "Oạch",
+                text: "Bạn thiếu VGEM mất rồi! Nạp thêm VGEM vào tài khoản nhé!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Ok",
+                cancelButtonText: "Thôi",
+            }).then(function (result) {
+                if (result.value) {
+                    window.location.href = 'user-loaded.html';
+                } else {
+                    return false;
+                }
+            });
         });
-    })
+
+        $('.successful-sweetalert').on('click', function () {
+            swal({
+                title: "Nạp thành công",
+                text: "Đã nạp thành công, chúc bạn xem phim vui vẻ ^-^",
+                type: "success",
+                confirmButtonClass: "btn-primary",
+                confirmButtonText: "Ok",
+            });
+        });
+    });
 </script>
 <script src="../vendors/bootstrap/bootstrap.min.js"></script>
 <script src="js/main.bundle.js"></script>

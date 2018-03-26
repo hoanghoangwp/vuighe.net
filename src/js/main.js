@@ -58,10 +58,19 @@ function init_clickTabs() {
     });
 }
 
+function init_comment() {
+    $('.comment__contact a').on('click', function (e) {
+        e.preventDefault();
+
+        $('.emoji-wysiwyg-editor.form-control').trigger('focus');
+    });
+}
+
 $(document).ready(function () {
     init_clickSearchBar();
     init_toggleMenu();
     init_clickSeasonsList();
     init_closeSignUpModal();
     init_clickTabs();
+    init_comment();
 });
